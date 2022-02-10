@@ -1,0 +1,9 @@
+Sudo: required
+Services:
+ - docker
+
+before_install:
+ - docker build -t someshn123/docker-react -f Dockerfile.dev .
+
+Script:
+ - docker run someshn123/docker-react nom run test -- --coverage
